@@ -64,7 +64,7 @@ public class HomeController {
         return "search";
     }
 
-    @PostMapping("/search")
+    @PostMapping("/processsearch")
     public String processForm(
                               @RequestParam(value = "field",required=false) String field,
                               @RequestParam(value = "title",required=false) String title, Model model){
