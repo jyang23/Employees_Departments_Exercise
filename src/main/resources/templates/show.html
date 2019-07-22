@@ -1,10 +1,39 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
-    <meta charset="UTF-8"/>
-    <title>Title</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Show</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" crossorigin="anonymous">
+    <link rel="stylesheet" href="stylesheet.css">
 </head>
-<body>
+<body class="page">
+<a class="active" href="/add">Add Employee</a>
+<div class="sidenav">
 
+</div>
+
+<div class = "main">
+    <div class="container">
+        <h1>Employees<img src="employees.png" align="left" /></h1><br/>
+        <div class = "row container">
+            <div class="card m-2" style="width: 17rem;" th:each="department : ${departments}">
+                <div class="card-header bg-info text-white"><td th:text = "${department.id}"></td>: <td th:text = "${department.name}"></td></div>
+                <div class="card-body">
+                    <small>Department: <td th:text = "${department.field}"></td></small></br>
+                    <small>Title: <td th:text = "${department.jobtitle}"></td></small></br>
+                    <a th:href="@{/details/{id}(id = ${department.id})}">Details</a>
+                    <a th:href="@{/update/{id}(id = ${department.id})}">Update</a>
+                    <a th:href="@{/delete/{id}(id = ${department.id})}">Delete</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
 </body>
+
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" crossorigin="anonymous"></script>
+
 </html>

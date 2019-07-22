@@ -76,7 +76,7 @@ public class HomeController {
         {
             model.addAttribute("pets", departmentRepository.findByJobtitle(title));
         }
-        return "confirm";
+        return "show";
     }
 
 
