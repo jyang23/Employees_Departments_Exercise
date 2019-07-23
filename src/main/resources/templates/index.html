@@ -12,7 +12,20 @@
 
 <div class="sidenav">
     <a class="active" href="/add">Add Employee</a>
-<!--    <a class="active" href="/loadfilter">Filter Results</a>-->
+    <p>Search By Department:</p>
+    <form action="#" th:action="@{/processsearch}" method="post">
+        <div class="form-group">
+            <p><input class="form-control" type="text" name ="field"></p>
+        </div>
+        <p><input class="btn btn-primary" type="submit" value="Submit"/></p>
+    </form>
+    <p>Search By Title:</p>
+    <form action="#" th:action="@{/processsearch}" method="post">
+        <div class="form-group">
+            <p><input class="form-control" type="text" name ="title"></p>
+        </div>
+        <p><input class="btn btn-primary" type="submit" value="Submit"/></p>
+    </form>
 </div>
 
 <div class = "main">

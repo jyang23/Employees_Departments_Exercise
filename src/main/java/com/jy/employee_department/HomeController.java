@@ -59,11 +59,6 @@ public class HomeController {
         return "redirect:/";
     }
     //----------------------------------------------------------------------------------------------------------------------
-    @RequestMapping("/search")
-    public String search() {
-        return "search";
-    }
-
     @PostMapping("/processsearch")
     public String processForm(
                               @RequestParam(value = "field",required=false) String field,
